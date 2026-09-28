@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main {
+            display: flex;
+        }
+
+        nav {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0);
+            justify-content: space-around;
+        }
+        
+        .shortcut {
+            display: flex;
+            color: black;
+            gap: 12px;
+            font-size: 24px;
+            font-weight: 800;
+            margin-top: 16px;
+        }
+    
+        a {
+            text-decoration: none;
+        }
+
+        ul {
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .section {
+            background-size: cover;   
+            background-repeat: no-repeat;
+        }
+
+        .section.one {
+            background-image: url(./assets/sectiononebg.jpg);
+        }
+
+        .content {
+            flex: 1 1;
+        }
+
+        #introduction {
+            display: flex;  
+            flex-direction: column;
+            margin: 0;
+            justify-content: center;
+            align-items: center;
+            height: 1000px;
+            width: 100%;
+        }
+
+        .landingtext {
+            color: rgb(0, 0, 0, 0);
+        }
+
+        li.landingtext a {
+            -webkit-text-stroke: 1px rgb(255, 61, 177);
+            color: rgb(0, 0, 0, 0);
+        }
+
+        p.landingtext {
+            -webkit-text-stroke: 1px rgb(255, 61, 177);
+        }
+
+        h1.landingtext {
+            -webkit-text-stroke: 2px rgb(255, 61, 177);
+        }
+
+        .textbox {
+            position: relative;
+            top: -120px;
+        }
+
+        .textbox h1 {
+            font-size: 96px;
+            margin: 0;
+        }
+
+        .textbox p {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        #hobbybutton {
+            padding: 8px 24px;
+            border-radius: 9999px;
+            color: #5B7C99;   
+            font-weight: 800;
+            box-shadow: 0 4px 14px 0 rgba(0, 123, 255, 0.4);
+            background-color: #59dad600;
+            border: 2px solid #e18b92;
+            font-size: 16px;
+        }
+
+        #hobbybutton:hover {
+            border: 2px solid #A0E7E5;
+            color: #fd8181;
+            box-shadow: 0 0 15px rgba(232, 197, 200, 0.6);
+        }
+
+        a img {
+            width: 80px;
+            height: 80px;
+            list-style: none;
+        }
+
+        .logoContainer {    
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        footer {
+            background-color: gray;
+        }
+        footer p {
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .shortcut a:hover {
+            -webkit-text-stroke: 2px rgb(59, 216, 255);
+        }
+
+        .transition {
+            flex: 1;
+            background-image: linear-gradient(#040a0e00, #000000); 
+            width: 100%;
+            height: 85px;
+            margin: 0;
+        }
+
+        .transition.one {
+            position: absolute;
+            inset-inline-start: 0;
+            inset-block-start: 989px;
+        }
+
+        .section.two {
+            background-image: url(./assets/sectiontwobg.png);
+            margin: 0;
+            height: 1000px;
+            width: 100%;
+            background-position: 35% 50%;
+        }
+
+        .list ol {
+            display: flex;
+            color: white;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+            gap: 20px;
+            height: 100%;
+        }
+
+        .list {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .list h2 {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 36px;
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 1px rgb(255, 255, 255);
+        }
+
+        .game h3 {
+            text-align: center;
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 1px rgb(255, 255, 255);
+            font-size: 36px;
+        }
+
+        .game p {
+            margin: 4px 16px;
+            font-size: 24px;
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+        }
+
+        .game {
+            border: 2px solid white;
+            box-shadow: 0 4px 14px 0 whitesmoke;
+            border-radius: 5%;
+            position: relative;
+            overflow: hidden;
+            height: 700px;
+            background-image: linear-gradient(#3498db34, hsla(224, 39%, 57%, 0.582)); 
+            transition: transform 0.3s ease;
+            min-width: 0;
+        }
+
+        .game.one::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('./assets/gameonebghover.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            z-index: 1;
+        }
+        
+        .game.one {
+            flex: 2;
+        }
+
+        .game.two {
+            flex: 2 1;
+        }
+
+        .game.two::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('./assets/gametwobghover.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            z-index: 1;
+        }
+
+        .game.three {
+            flex: 2;
+        }
+
+        .game.three::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('./assets/gamethreebghover.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+            z-index: 1;
+        }
+
+        .game > * {
+            position: relative;
+            z-index: 2; 
+        }
+    
+        .game:hover::before {
+            opacity: 1;
+        }
+
+        .game:hover h3, .game:hover p {
+            -webkit-text-stroke: 1px rgb(0, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="content">
+            <div class="section one">
+                <nav>
+                    <ul class="shortcut">    
+                        <li class="landingtext"><a href="index.html">Home</a></li>
+                        <li class="landingtext"><a href="about.html">About</a></li>
+                        <li class="landingtext"><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                <div id="introduction" >
+                    <div class="textbox">
+                        <h1 class="landingtext">Welcome to my website.</h1>
+                        <p class="landingtext">I am Kyle Denver Gomez</p>
+                        <p class="landingtext">of DCPET 1-3</p>
+                        <a href="#hobby"><button id="hobbybutton">Who am I?</button></a>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="transition one">
+
+            </div>
+            <div class="section two">
+                <div class="list" id="hobby">
+                    <h2>Games I enjoy</h2>
+                    <ol>
+                        <li class="game one"><div>
+                            <h3>Terraria</h3>
+                            <p>A masterpiece you could sink hundreds of hours into.</p>
+                            <p>Hours played: 888.3 hours</p>
+                        </div></li>
+                        <li class="game two"><div>
+                            <h3>Hollow Knight: Silksong</h3>
+                            <p>An amazing sequel that was worth the years waiting for it. One of the best games of all time. Im including the original Hollow Knight in this.</p>
+                            <p>Total Hours played across both games: 168.8 hours</p>
+                        </div></li>
+                        <li class="game three"><div>
+                            <h3>Nine Sols</h3>
+                            <p>Id say an underrated masterpiece that combines beautiful art, exhilarating gameplay, and deep story.</p>
+                            <p>Hours played: 27 hours</p>
+                        </div></li>
+                    </ol>
+                </div>
+            </div>
+            <div class="list" id="website">
+                        <h2>My Favorite Websites</h2>
+                        <ul>
+                            <li><a href="youtube.com" target="_blank">Youtube</a></li>
+                            <li><a href="theodinproject.com" target="_blank"></a>The Odin Project</li>
+                        </ul>
+                    </div>
+            <div id="social">
+                <h2>My social media profiles</h2>
+                <ul class="logoContainer">
+                    <li><a href="https://www.facebook.com/gomez.kyle.denver/" target="_blank"><img src="./assets/facebook.png" alt="facebook logo"></a></li>
+                    <li><a href="https://github.com/veil-dev" target="_blank"><img src="./assets/github.png" alt="github logo"></a></li>
+                </ul>    
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 Kyle Gomez. All rights reserved.</p>
+    </footer>
+</body>
+</html>
