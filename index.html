@@ -43,6 +43,7 @@
         .section {
             background-size: cover;   
             background-repeat: no-repeat;
+            position: relative;
         }
 
         .section.one {
@@ -147,11 +148,9 @@
             background-image: linear-gradient(#040a0e00, #000000); 
             height: 85px;
             margin: 0;
-        }
-
-        .transition.one {
             position: absolute;
             inset: auto 0 0 0;
+            pointer-events: none;
         }
 
         .section.two {
@@ -282,6 +281,85 @@
                 height: 56px;
             }
         }
+        .section.three {
+            background-image: url(./assets/sectionthreebg.jpg);
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 48px 24px;
+            box-sizing: border-box;
+        }
+
+        .playlist {
+            width: 100%;
+            max-width: 1000px;
+        }
+
+        .playlist h2 {
+            text-align: center;
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 1px rgb(255, 255, 255);
+        }
+
+        .playlist-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            align-items: center;
+            padding: 24px;
+            border: 2px solid white;
+            border-radius: 24px;
+            box-shadow: 0 4px 14px 0 whitesmoke;
+            background-image: linear-gradient(#3498db34, hsla(224, 39%, 57%, 0.582));
+            backdrop-filter: blur(6px);
+        }
+
+        .playlist-info {
+            flex: 1 1 280px;
+            min-width: 0;
+        }
+
+        .playlist-info h3 {
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            margin: 0 0 8px;
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 1px rgb(255, 255, 255);
+        }
+
+        .playlist-info p {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+        }
+
+        .playlist-card iframe {
+            flex: 2 1 320px;
+            min-width: 0;
+            width: 100%;
+            border: 0;
+            border-radius: 12px;
+        }
+
+        .spotifybutton {
+            padding: 8px 24px;
+            border-radius: 9999px;
+            color: #5B7C99;
+            font-weight: 800;
+            font-size: 16px;
+            background-color: #59dad600;
+            border: 2px solid #e18b92;
+            box-shadow: 0 4px 14px 0 rgba(0, 123, 255, 0.4);
+            cursor: pointer;
+        }
+
+        .spotifybutton:hover {
+            border: 2px solid #A0E7E5;
+            color: #fd8181;
+            box-shadow: 0 0 15px rgba(232, 197, 200, 0.6);
+        }
     </style>
 </head>
 <body>
@@ -303,7 +381,7 @@
                         <a href="#hobby"><button id="hobbybutton">Who am I?</button></a>
                     </div>
                 </div>
-                <div class="transition one">
+                <div class="transition">
 
                 </div>
             </div>
@@ -327,6 +405,31 @@
                             <p>Hours played: 27 hours</p>
                         </div></li>
                     </ol>
+                </div>
+                <div class="transition">
+
+                </div>
+            </div>
+            <div class="section three">
+                <div class="playlist" id="music">
+                    <h2>Music I'm into</h2>
+                    <div class="playlist-card">
+                        <div class="playlist-info">
+                            <h3>Melting pot</h3>
+                            <p>Like the title suggests, its a melting pot of all my favorite songs.</p>
+                            <p>Songs: 267</p>
+                            <a href="https://open.spotify.com/playlist/0BPVhPhz12So30cbUUkXmb?si=532084855e1c4bc8&pt=51453f294c598b0b29eb0e095adbab8a" target="_blank">
+                                <button class="spotifybutton">Open in Spotify</button>
+                            </a>
+                        </div>
+                        <iframe
+                            src="https://open.spotify.com/embed/playlist/0BPVhPhz12So30cbUUkXmb?utm_source=generator&si=69be0544d7b34d03>"
+                            height="352"
+                            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                            loading="lazy"
+                            title="My Spotify playlist">
+                        </iframe>
+                    </div>
                 </div>
             </div>
             <div class="list" id="website">
