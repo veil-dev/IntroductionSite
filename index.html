@@ -132,12 +132,17 @@
         }
 
         footer {
-            background-color: gray;
+            background-color: rgba(0, 0, 0, 0);
+            margin: 0;
+            display: inline;
         }
         footer p {
             font-size: 18px;
             font-weight: 700;
-            text-align: center;
+            -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+            color: rgba(0, 0, 0, 0.934);
+            margin: 0;
+            display: inline;
         }
 
         .shortcut a:hover {
@@ -360,6 +365,99 @@
             color: #fd8181;
             box-shadow: 0 0 15px rgba(232, 197, 200, 0.6);
         }
+
+        .section.four {
+            background-image: url(./assets/sectionfourbg.png);
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 48px 24px 24px;
+            box-sizing: border-box;
+            background-position: 35% 50%;
+        }
+
+        .four-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fav-card {
+            width: 100%;
+            max-width: 700px;
+            padding: 24px;
+            box-sizing: border-box;
+            text-align: center;
+            border: 2px solid white;
+            border-radius: 24px;
+            box-shadow: 0 4px 14px 0 whitesmoke;
+            background-image: linear-gradient(#3498db34, hsla(224, 39%, 57%, 0.582));
+            backdrop-filter: blur(6px);
+        }
+
+        .fav-card h2 {
+            margin: 0 0 16px;
+            font-size: clamp(1.75rem, 5vw, 2.25rem);
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 1px rgb(255, 255, 255);
+        }
+
+        .songlist {
+            list-style: disc;
+            list-style-position: inside;
+            margin: 0;
+            padding: 0;
+        }
+
+        .songlist li {
+            font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+            margin-bottom: 10px;
+            color: rgba(51, 146, 205, 0);
+            -webkit-text-stroke: 0.5px rgb(255, 255, 255);
+        }
+
+        .songlist li::marker {
+            color: white;
+        }
+
+        .socialbar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 12px 32px;
+            margin: 32px auto 0;
+            padding: 10px 24px;
+            width: fit-content;
+            max-width: 100%;
+            box-sizing: border-box;
+            border: 2px solid white;
+            border-radius: 9999px;
+            box-shadow: 0 4px 14px 0 whitesmoke;
+            background-image: linear-gradient(#3498db34, hsla(224, 39%, 57%, 0.582));
+            backdrop-filter: blur(6px);
+        }
+
+        .socialbar a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .socialbar a img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .socialbar a:hover {
+            color: #fd8181;
+        }
     </style>
 </head>
 <body>
@@ -431,25 +529,33 @@
                         </iframe>
                     </div>
                 </div>
+                <div class="transition">
+
+                </div>
             </div>
-            <div class="list" id="website">
-                        <h2>My Favorite Websites</h2>
-                        <ul>
-                            <li><a href="https://www.youtube.com" target="_blank">Youtube</a></li>
-                            <li><a href="https://www.theodinproject.com" target="_blank">The Odin Project</a></li>
+            <div class="section four">
+                <div class="four-main">
+                    <div class="fav-card">
+                        <h2>Favorite Songs</h2>
+                        <ul class="songlist">
+                            <li>Soldier Side - System of a Down</li>
+                            <li>Sad Statue - System of a Down</li>
+                            <li>Toxicity - System of a Down</li>
+                            <li>King for a day - Pierce the veil</li>
+                            <li>New Born - Muse</li>
                         </ul>
                     </div>
-            <div id="social">
-                <h2>My social media profiles</h2>
-                <ul class="logoContainer">
-                    <li><a href="https://www.facebook.com/gomez.kyle.denver/" target="_blank"><img src="./assets/facebook.png" alt="facebook logo"></a></li>
-                    <li><a href="https://github.com/veil-dev" target="_blank"><img src="./assets/github.png" alt="github logo"></a></li>
-                </ul>    
+                </div>
+                <ul class="socialbar" id="social">
+                    <li><a href="https://github.com/veil-dev" target="_blank"><img src="./assets/github.png" alt="github logo"><span>veil-dev</span></a></li>
+                    <li><a href="https://www.facebook.com/gomez.kyle.denver/" target="_blank"><img src="./assets/facebook.png" alt="facebook logo"><span>gomez.kyle.denver</span></a></li>
+                    <li><a href="https://www.tiktok.com/@velz483" target="_blank"><img src="./assets/tiktok.png" alt="tiktok logo"><span>@velz483</span></a></li>
+                </ul>
+                <footer>
+                    <p>&copy; 2026 Kyle Gomez. All rights reserved.</p>
+                </footer>
             </div>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2026 Kyle Gomez. All rights reserved.</p>
-    </footer>
 </body>
 </html>
